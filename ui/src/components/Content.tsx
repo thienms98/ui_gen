@@ -1,14 +1,8 @@
-"use client";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  DragDropContext,
-  Draggable,
-  DropResult,
-  Droppable,
-  OnDragEndResponder,
-} from "react-beautiful-dnd";
-import { useMainContext } from "./MainContext";
-import ContentItem from "./ContentItem";
+'use client';
+import { XMarkIcon } from '@heroicons/react/24/outline';
+import { DragDropContext, Draggable, DropResult, Droppable, OnDragEndResponder } from 'react-beautiful-dnd';
+import { useMainContext } from './MainContext';
+import ContentItem from './ContentItem';
 
 export default function Content() {
   const { routes, currentPage, previewFS, removeLayout, swapLayout, togglePreview } = useMainContext();
@@ -18,17 +12,17 @@ export default function Content() {
   };
 
   const onGenerate = async () => {
-    const response = await fetch("http://localhost:3232/generate", {
-      method: "POST",
+    const response = await fetch('http://localhost:3232/generate', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(routes[currentPage])
+      body: JSON.stringify(routes[currentPage]),
     });
   };
 
   const onDragEnd = (result: DropResult) => {
-    console.log("onDragEnd", result);
+    console.log('onDragEnd', result);
     const destIndex = result.destination?.index;
     const sourceIndex = result.source.index;
     if (destIndex === undefined) return;
@@ -50,7 +44,7 @@ export default function Content() {
                 {routes[currentPage || 0]?.layouts.map((layout, index) => {
                   console.log(index);
                   return (
-                    <Draggable key={layout} draggableId={layout+index} index={index}>
+                    <Draggable key={layout} draggableId={layout + index} index={index}>
                       {(provided, snapshot) => (
                         <div
                           ref={provided.innerRef}
@@ -61,10 +55,7 @@ export default function Content() {
                           {/* <div className="px-6 py-3 border bg-white w-full">{layout}</div> */}
                           <ContentItem name={layout} />
                           <span className="grow-0 w-[30px] text-gray-500 cursor-pointer">
-                            <XMarkIcon
-                              className="p-1 group-hover:block hidden"
-                              onClick={() => onDelete(index)}
-                            />
+                            <XMarkIcon className="p-1 group-hover:block hidden" onClick={() => onDelete(index)} />
                           </span>
                         </div>
                       )}
@@ -78,16 +69,10 @@ export default function Content() {
         </Droppable>
       </DragDropContext>
       <div className="fixed bottom-4 right-4">
-        <button
-          onClick={() => togglePreview()}
-          className="px-6 py-2 border rounded-md bg-yellow-300 text-black mr-2"
-        >
+        <button onClick={() => togglePreview()} className="px-6 py-2 border rounded-md bg-yellow-300 text-black mr-2">
           Preview
         </button>
-        <button
-          onClick={onGenerate}
-          className="px-6 py-2 border rounded-md bg-indigo-500 text-white"
-        >
+        <button onClick={onGenerate} className="px-6 py-2 border rounded-md bg-indigo-500 text-white">
           Generate
         </button>
       </div>

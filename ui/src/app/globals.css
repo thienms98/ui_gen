@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  scrollbar-width: thin
+* {
+  scrollbar-width: thin;
 }
 .component-item {
   @apply p-2 rounded-md;
@@ -22,12 +22,29 @@
 }
 
 .route-btn {
-  @apply py-1 px-3 rounded-md border-[1px] border-black cursor-pointer hover:bg-pink-200/80
+  @apply py-1 px-8 rounded-md border-[1px] border-black cursor-pointer hover:bg-black/50 hover:text-white;
+}
+.route-btn:focus {
+  @apply pr-10;
 }
 .route-btn.active {
-  @apply bg-black/70 text-white outline outline-blue-500
+  @apply bg-black/70 text-white outline outline-blue-500;
 }
 
-.modal-btn{
-  @apply border-[1px] border-black px-2 cursor-pointer outline-offset-2
+.modal-btn {
+  @apply border-[1px] border-black px-2 cursor-pointer outline-offset-2;
+}
+
+.preview {
+  animation: slideIn 0.5s forwards;
+}
+@keyframes slideIn {
+  from {
+    width: 0;
+    right: -100%;
+  }
+  to {
+    width: 100%;
+    right: 0;
+  }
 }

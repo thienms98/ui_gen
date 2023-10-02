@@ -1,26 +1,26 @@
-import Content from "@/components/Content";
-import { MainProvider } from "@/components/MainContext";
-import Preview from "@/components/Preview";
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
-import Image from "next/image";
+import Content from '@/components/Content';
+import { MainProvider } from '@/components/MainContext';
+import Preview from '@/components/Preview';
+import Sidebar from '@/components/Sidebar';
+import Header from '@/components/Header';
+import Image from 'next/image';
 
 export interface ILayoutGroup {
   [key: string]: string[];
 }
 
 async function getData() {
-  const res = await fetch("http://localhost:3232/layouts");
+  const res = await fetch('http://localhost:3232/layouts');
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error('Failed to fetch data');
   }
 
   const data = (await res.json()) as { tailwindLayouts: string[] };
   const layouts: ILayoutGroup = {};
 
   data.tailwindLayouts.forEach((layout) => {
-    const componentName = layout.replace(/\d+/, "");
+    const componentName = layout.replace(/\d+/, '');
     if (!layouts[componentName]) {
       layouts[componentName] = [];
     }

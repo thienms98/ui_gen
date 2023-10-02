@@ -1,13 +1,14 @@
-"use client";
-import Image from "next/image";
-import { ILayoutGroup } from "@/app/page";
-import { useRef, useState } from "react";
-import ChildComponentItem from "./ChildComponentItem";
+'use client';
+
+import Image from 'next/image';
+import { ILayoutGroup } from '@/app/page';
+import { useRef, useState } from 'react';
+import ChildComponentItem from './ChildComponentItem';
 
 export default function Sidebar({ layouts }: { layouts: ILayoutGroup }) {
   const components = Object.keys(layouts);
   const [name, setName] = useState(components[0]);
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState('');
   const selectedLayouts = layouts[name];
   const timeout = useRef(0);
 
@@ -33,7 +34,7 @@ export default function Sidebar({ layouts }: { layouts: ILayoutGroup }) {
         {components.map((compName) => {
           const children = layouts[compName];
           const total = children && children.length ? children.length : 0;
-          const active = compName === name ? "active" : "";
+          const active = compName === name ? 'active' : '';
 
           if (term && !compName.toLowerCase().includes(term)) {
             return null;
@@ -57,9 +58,7 @@ export default function Sidebar({ layouts }: { layouts: ILayoutGroup }) {
                 />
                 <h2 className="text-sm text-gray-600 border-t px-2 py-1">
                   {compName}
-                  <span className="block text-xs text-gray-400">
-                    {total} components
-                  </span>
+                  <span className="block text-xs text-gray-400">{total} components</span>
                 </h2>
               </div>
             </div>
