@@ -102,7 +102,8 @@ export const MainProvider = ({ children }: { children: ReactNode }) => {
   };
 
   useEffect(() => {
-    if (currentPage > routes.length - 1) setCurrentPage(0);
+    const len = routes.length;
+    if (currentPage > len - 1) setCurrentPage((len || 1) - 1);
   }, [currentPage, routes.length]);
   useEffect(() => {
     if (routes.length === 0) addRoute('/');

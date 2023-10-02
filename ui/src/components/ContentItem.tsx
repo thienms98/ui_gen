@@ -20,6 +20,7 @@ export default function ContentItem({ name }: { name: string }) {
       //   __html: html,
       // }}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text*/}
       <img src={`http://localhost:3232/assets/tailwindui/preview/${name}.png`} />
       {name}
     </div>
