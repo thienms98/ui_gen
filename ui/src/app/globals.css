@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  scrollbar-width: thin
+}
+.component-item {
+  @apply p-2 rounded-md;
+}
+
+.component-item.active {
+  @apply bg-indigo-50;
+}
+
+.component-item-container {
+  @apply border rounded-md hover:border-indigo-400 cursor-pointer bg-white;
+}
+
+.component-item.active .component-item-container {
+  @apply border-indigo-500;
+}
+
+.route-btn {
+  @apply py-1 px-3 rounded-md border-[1px] border-black cursor-pointer hover:bg-pink-200/80
+}
+.route-btn.active {
+  @apply bg-black/70 text-white outline outline-blue-500
+}
+
+.modal-btn{
+  @apply border-[1px] border-black px-2 cursor-pointer outline-offset-2
+}
