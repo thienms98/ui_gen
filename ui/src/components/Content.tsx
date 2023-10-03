@@ -19,7 +19,7 @@ export default function Content() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(routes[currentPage]),
+      body: JSON.stringify(routes),
     });
   };
 
