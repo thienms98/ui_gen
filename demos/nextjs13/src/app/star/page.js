@@ -3,15 +3,18 @@
 import Image from "next/image";
 
 {/*R_IMPORT_START*/}
-          import ContactSection2 from '@/components/ContactSection2'
+          import BlogSection2 from '@/components/BlogSection2'
+          import BlogSection3 from '@/components/BlogSection3'
           {/*R_IMPORT_END*/}
 
 export default function Home() {
   return <>
 
 {/*R_CONTENT_START*/}
-          <ContactSection2 />
+          <BlogSection2 />
+          <BlogSection3 />
           {/*R_CONTENT_END*/}
     
     </>;
 }
+      

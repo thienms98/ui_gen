@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 interface Device {
   key: number;
@@ -25,6 +26,8 @@ const DEVICES: Device[] = [
 const Preview = () => {
   const router = useRouter();
   const [view, setView] = useState<number>(0);
+  const page = useSearchParams().get('page');
+  const previewUrl = `http://localhost:3011${page || ''}`;
   return (
     <div className="fixed w-screen h-screen shrink-0 border-l top-0 right-0 bg-[#f3f4f6] z-[200] flex flex-col preview">
       <div className="bg-white py-3 shadow-lg">
@@ -46,14 +49,14 @@ const Preview = () => {
             ))}
           </div>
           <div className="cursor-pointer hover:underline">
-            <a href="http://localhost:3011" target="_blank">
+            <a href={previewUrl} target="_blank">
               Go to page &gt;
             </a>
           </div>
         </div>
       </div>
       <div className="flex-1 mx-auto py-5 transition-all" style={{ width: DEVICES[view].width }}>
-        <iframe className="w-full h-full" src="http://localhost:3011"></iframe>
+        <iframe className="w-full h-full" src={previewUrl}></iframe>
       </div>
     </div>
   );
