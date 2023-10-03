@@ -72,7 +72,7 @@ export default function Content() {
       </DragDropContext>
       <div className="fixed bottom-4 right-4">
         <button
-          onClick={() => router.push('/preview')}
+          onClick={() => router.push(`/preview?page=${routes[currentPage].page}`)}
           className="px-6 py-2 border rounded-md bg-yellow-300 text-black mr-2"
         >
           Preview

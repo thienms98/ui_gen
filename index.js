@@ -1,11 +1,11 @@
-const replace = require("replace-in-file");
-const path = require("path");
-const fs = require("fs-extra");
-const express = require("express");
-const cors = require("cors");
+const replace = require('replace-in-file');
+const path = require('path');
+const fs = require('fs-extra');
+const express = require('express');
+const cors = require('cors');
 
-const resourceParentPath = path.join(__dirname, "./resources");
-const resourcePath = path.join(resourceParentPath, "tailwindui");
+const resourceParentPath = path.join(__dirname, './resources');
+const resourcePath = path.join(resourceParentPath, 'tailwindui');
 const app = express();
 const port = 3232;
 
@@ -16,53 +16,96 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/assets", express.static("resources"));
+app.use('/assets', express.static('resources'));
 
-app.get("/layout/:name", async (req, res, next) => {
+app.get('/layout/:name', async (req, res, next) => {
   try {
     const name = req.params.name;
-    const html = fs.readFileSync(
-      path.join(resourcePath, `preview/${name}.html`)
-    );
+    const html = fs.readFileSync(path.join(resourcePath, `preview/${name}.html`));
     res.json({ html: html.toString() });
   } catch (error) {
     res.status(500);
   }
 });
 
-app.get("/layouts", async (req, res, next) => {
+app.get('/layouts', async (req, res, next) => {
   const files = fs.readdirSync(resourcePath);
-  const filteredFiles = files.map((f) => f.replace(".js", ""));
+  const filteredFiles = files.map((f) => f.replace('.js', ''));
   res.json({
     tailwindLayouts: filteredFiles,
   });
 });
 
-app.post("/generate", async (req, res, next) => {
+app.post('/generate', async (req, res, next) => {
   const body = req.body;
 
   try {
-    const layouts = body.layouts;
+    const { page, layouts } = body;
+    console.log(page);
 
-    const destParentFolder = path.join(
-      __dirname,
-      "./demos/nextjs13/src/app/_components"
-    );
-    const resourceParentPath = path.join(__dirname, "./resources");
-    const resourcePath = path.join(resourceParentPath, "tailwindui");
+    // read layouts.json file
+    const allLayouts = JSON.parse(fs.readFileSync(path.join(__dirname, './layouts.json')).toString());
+    const index = allLayouts.findIndex(({ page: pageName }) => pageName === page);
+    // overwrite json file while pushing item
+    if (index === -1) allLayouts.push({ page, layouts });
+    else allLayouts.splice(index, 1, { page, layouts });
+    fs.writeFileSync(path.join(__dirname, './layouts.json'), JSON.stringify(allLayouts));
+
+    // unless folder exist, create one
+    if (!fs.existsSync(path.join(__dirname, './demos/nextjs13/src/app', page))) {
+      fs.mkdirSync(path.join(__dirname, './demos/nextjs13/src/app', page));
+
+      // create page.js following template
+      fs.writeFileSync(
+        path.join(__dirname, './demos/nextjs13/src/app', page, '/page.js'),
+        `'use client'
+
+import Image from "next/image";
+
+{/*R_IMPORT_START*/}
+          import BlogSection2 from '@/components/BlogSection2'
+          import BlogSection3 from '@/components/BlogSection3'
+          {/*R_IMPORT_END*/}
+
+export default function Home() {
+  return <>
+
+{/*R_CONTENT_START*/}
+          <BlogSection2 />
+          <BlogSection3 />
+          {/*R_CONTENT_END*/}
+    
+    </>;
+}
+      `,
+      );
+    }
+
+    const destParentFolder = path.join(__dirname, './demos/nextjs13/src/app/_components');
+    const resourceParentPath = path.join(__dirname, './resources');
+    const resourcePath = path.join(resourceParentPath, 'tailwindui');
 
     await fs.remove(destParentFolder);
 
     const importLinks = [];
     const components = [];
 
-    // generate file links
-    layouts.forEach((section) => {
+    // copy needed components
+    const componentsNeeded = [];
+    allLayouts.forEach(({ layouts }) => {
+      layouts.map((layout) => {
+        if (!componentsNeeded.includes(layout)) componentsNeeded.push(layout);
+      });
+    });
+
+    componentsNeeded.forEach((section) => {
       const sourceFilePath = path.join(resourcePath, `${section}.js`);
       const destinationPath = path.join(destParentFolder, `${section}.js`);
 
       fs.copy(sourceFilePath, destinationPath);
-
+    });
+    // generate file links
+    layouts.forEach((section) => {
       const importUrl = `import ${section} from '@/components/${section}'`;
 
       importLinks.includes(importUrl) ? null : importLinks.push(importUrl);
@@ -73,7 +116,7 @@ app.post("/generate", async (req, res, next) => {
     console.log(importLinks);
 
     await replace({
-      files: "./demos/nextjs13/src/app/page.js",
+      files: `./demos/nextjs13/src/app${page}/page.js`,
       from: /{\/\*R_IMPORT_START(.|\r|\n)*R_IMPORT_END\*\/}/gm,
       to: `{/*R_IMPORT_START*/}
           ${importLinks.join(`
@@ -82,7 +125,7 @@ app.post("/generate", async (req, res, next) => {
     });
 
     await replace({
-      files: "./demos/nextjs13/src/app/page.js",
+      files: `./demos/nextjs13/src/app${page}/page.js`,
       from: /{\/\*R_CONTENT_START(.|\r|\n)*R_CONTENT_END\*\/}/gm,
       to: `{/*R_CONTENT_START*/}
           ${components.join(`
@@ -98,6 +141,26 @@ app.post("/generate", async (req, res, next) => {
     res.json({
       status: 500,
     });
+  }
+});
+
+app.delete('/page', (req, res) => {
+  try {
+    const page = req.body.page;
+
+    // read json file
+    const jsonDir = path.join(__dirname, './layouts.json');
+    const allLayouts = JSON.parse(fs.readFileSync(jsonDir).toString());
+    // remove page from json file
+    const layouts = allLayouts.filter((layout) => layout.page !== page);
+    fs.writeFileSync(jsonDir, JSON.stringify(layouts));
+
+    const pageDest = path.join(__dirname, './demos/nextjs13/src/app', page);
+    if (fs.existsSync(pageDest)) fs.removeSync(pageDest);
+
+    return res.sendStatus(200);
+  } catch (err) {
+    return res.sendStatus(500);
   }
 });
 

@@ -85,6 +85,16 @@ export const MainProvider = ({ children }: { children: ReactNode }) => {
   };
   const removeRoute = (index: number) => {
     setRoutes((prev) => prev.filter((r, i) => i !== index));
+    fetch('http://localhost:3232/page', {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+      body: JSON.stringify({
+        page: routes[index].page,
+      }),
+    });
   };
   const changeRoute = (index: number, layouts: string[]) => {
     setRoutes((prev) => {
