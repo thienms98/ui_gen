@@ -41,8 +41,12 @@ function Header() {
             </button>
           );
         })}
-      <button className="route-btn flex flex-row relative" onClick={() => inputRef.current?.focus()}>
-        <span>{newRoute || ''}</span>
+      <button
+        className="route-btn flex flex-row relative hover:bg-inherit hover:text-black"
+        tabIndex={-1}
+        onClick={() => inputRef.current?.focus()}
+      >
+        {/* <span>{newRoute || ''}</span> */}
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -61,15 +65,11 @@ function Header() {
             ref={inputRef}
             value={newRoute}
             onChange={(e) => setNewRoute(e.target.value)}
-            className="w-0 outline-none peer"
+            className="max-w-[100px] outline-none peer bg-transparent"
+            placeholder="+"
           />
-          <span className="peer-focus:hidden inline">+</span>
-          <span className="animate-ping peer-focus:inline hidden">|</span>
-          {newRoute.trim() && (
-            <button type="submit" className="absolute right-1 hover:text-green-400 focus:text-green-400 outline-none">
-              &gt;&gt;
-            </button>
-          )}
+          {/* <span className="peer-focus:hidden inline">+</span> */}
+          {/* <span className="animate-ping peer-focus:inline hidden">|</span> */}
         </form>
       </button>
       {modal > -1 && (
