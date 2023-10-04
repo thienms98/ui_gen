@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { useMainContext } from './MainContext';
+import { ArrowPathIcon } from '@heroicons/react/24/outline';
 
 function Header() {
   const { routes, addRoute, removeRoute, changeCurrentPage, currentPage } = useMainContext();
@@ -17,7 +18,7 @@ function Header() {
 
   return (
     <div className="flex flex-row gap-2 max-w-[calc(100vw_-_200px_-_250px)] overflow-x-auto py-3 px-6 shadow-lg z-30">
-      {routes.length > 0 &&
+      {routes.length > 0 ? (
         routes.map(({ page }, index) => {
           return (
             <button
@@ -40,13 +41,16 @@ function Header() {
               </div>
             </button>
           );
-        })}
+        })
+      ) : (
+        <ArrowPathIcon className="animate-spin w-5" />
+      )}
       <button
         className="route-btn flex flex-row relative hover:bg-inherit hover:text-black"
         tabIndex={-1}
         onClick={() => inputRef.current?.focus()}
       >
-        {/* <span>{newRoute || ''}</span> */}
+        <span>{newRoute || ''}</span>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -65,11 +69,11 @@ function Header() {
             ref={inputRef}
             value={newRoute}
             onChange={(e) => setNewRoute(e.target.value)}
-            className="max-w-[100px] outline-none peer bg-transparent"
+            className="w-0 outline-none peer bg-transparent"
             placeholder="+"
           />
-          {/* <span className="peer-focus:hidden inline">+</span> */}
-          {/* <span className="animate-ping peer-focus:inline hidden">|</span> */}
+          <span className="peer-focus:hidden inline">{!newRoute && '+'}</span>
+          <span className="animate-ping peer-focus:inline hidden">|</span>
         </form>
       </button>
       {modal > -1 && (

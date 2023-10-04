@@ -38,7 +38,7 @@ export const useMainContext = () => {
 };
 
 export const MainProvider = ({ children }: { children: ReactNode }) => {
-  const [routes, setRoutes] = useState<{ page: string; layouts: string[] }[]>([{ page: '/', layouts: [] }]);
+  const [routes, setRoutes] = useState<{ page: string; layouts: string[] }[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [previewFS, setPreviewFS] = useState<boolean>(false);
   const addLayout = (layout: string) => {
@@ -73,6 +73,7 @@ export const MainProvider = ({ children }: { children: ReactNode }) => {
   const addRoute = (route: string) => {
     if (!route.trim()) return;
     const page = ('/' + route).replaceAll(/\/+/g, '/');
+    if (routes.find((item) => item.page === page)) return;
     setRoutes((prev) => {
       return [
         ...prev,
