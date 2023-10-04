@@ -85,7 +85,7 @@ export const MainProvider = ({ children }: { children: ReactNode }) => {
   };
   const removeRoute = (index: number) => {
     setRoutes((prev) => prev.filter((r, i) => i !== index));
-    fetch('http://localhost:3232/page', {
+    fetch('http://localhost:3232/pages', {
       method: 'delete',
       headers: {
         'Content-Type': 'application/json',
@@ -111,6 +111,11 @@ export const MainProvider = ({ children }: { children: ReactNode }) => {
     else setPreviewFS((prev) => !prev);
   };
 
+  useEffect(() => {
+    fetch('http://localhost:3232/pages')
+      .then((res) => res.json())
+      .then(({ pages }) => setRoutes(pages));
+  }, []);
   useEffect(() => {
     const len = routes.length;
     if (currentPage > len - 1) setCurrentPage((len || 1) - 1);

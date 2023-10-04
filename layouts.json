@@ -1,1 +1,1 @@
-[{"page":"/","layouts":["BlogSection2","BlogSection3","BlogSection4"]},{"page":"/news","layouts":["BlogSection4","ContentSection4","CTASection2","CTASection11"]},{"page":"/home","layouts":["BlogSection2","BlogSection3"]},{}]
+[{"page":"/","layouts":["BlogSection2","BlogSection3"]},{"page":"/blog","layouts":["BlogSection2","BlogSection1"]},{"page":"/news","layouts":["BlogSection2","BlogSection3"]},{"page":"/featured","layouts":["BlogSection2","BlogSection3","BlogSection6"]},{"page":"/layout","layouts":["ContentSection3","BlogSection2"]}]

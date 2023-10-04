@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 {/*R_IMPORT_START*/}
           import BlogSection2 from '@/components/BlogSection2'
-          import BlogSection3 from '@/components/BlogSection3'
+          import BlogSection1 from '@/components/BlogSection1'
           {/*R_IMPORT_END*/}
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
     <>
       {/*R_CONTENT_START*/}
           <BlogSection2 />
-          <BlogSection3 />
+          <BlogSection1 />
           {/*R_CONTENT_END*/}
     </>
   );
