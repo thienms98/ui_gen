@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const express = require('express');
 const cors = require('cors');
+const Replicate = require('replicate');
 
 const resourceParentPath = path.join(__dirname, './resources');
 const resourcePath = path.join(resourceParentPath, 'tailwindui');
@@ -89,7 +90,7 @@ app.post('/generate', async (req, res, next) => {
     });
 
     await replace({
-      files: `./demos/nextjs13/src/app${page}/page.js`,
+      files: `./demos/nextjs13/src/app${page === '/' ? '' : page}/page.js`,
       from: /{\/\*R_IMPORT_START(.|\r|\n)*R_IMPORT_END\*\/}/gm,
       to: `{/*R_IMPORT_START*/}
           ${importLinks.join(`
@@ -97,7 +98,7 @@ app.post('/generate', async (req, res, next) => {
           {/*R_IMPORT_END*/}`,
     });
     await replace({
-      files: `./demos/nextjs13/src/app${page}/page.js`,
+      files: `./demos/nextjs13/src/app${page === '/' ? '' : page}/page.js`,
       from: /{\/\*R_CONTENT_START(.|\r|\n)*R_CONTENT_END\*\/}/gm,
       to: `{/*R_CONTENT_START*/}
         ${components.join(`
@@ -139,12 +140,65 @@ app.delete('/pages', (req, res) => {
       );
     else {
       const pageDest = path.join(__dirname, './demos/nextjs13/src/app', page);
-      if (fs.existsSync(pageDest)) fs.removeSync(pageDest);
+      if (fs.existsSync(pageDest)) fs.remove(pageDest);
     }
     return res.sendStatus(200);
   } catch (err) {
     return res.sendStatus(500);
   }
+});
+
+app.post('/template', (req, res) => {
+  const { layout } = req.body;
+
+  const component = path.join(__dirname, './resources/tailwindui', `./${layout}.js`);
+  const content = fs.readFileSync(component).toString();
+  let templates = content.match(/\{\/\*R_TEXT_START\*\/\}(.|\n|\r)+?\{\/\*R_TEXT_END\*\/\}/gm);
+  console.log(templates.length);
+
+  return res.json(templates.map((template) => template.slice(18, -16).trim()));
+});
+
+app.post('/generateText', async (req, res) => {
+  const { prompt, sysPrompt } = req.body;
+  const REPLICATE_API_TOKEN = 'r8_MWeUXsSJySX9RUbP3GyFOMDsyEkPSTM3SXxv6';
+  const replicate = new Replicate({
+    auth: REPLICATE_API_TOKEN,
+  });
+
+  const output = await replicate.run(
+    'meta/llama-2-70b-chat:02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3',
+    {
+      input: {
+        prompt,
+        system_prompt: sysPrompt,
+      },
+    },
+  );
+  console.log(await output);
+
+  return res.json(await output.join(''));
+});
+
+app.post('/updateDemo', (req, res) => {
+  const { template, component } = req.body;
+  if (!component) return res.status(500);
+  const destComponent = path.join(__dirname, `./demos/nextjs13/src/app/_components/${component}.js`);
+
+  let content = fs.readFileSync(destComponent).toString();
+  const matchWords = content.match(/\{\/\*R_TEXT_START\*\/\}(.|\n|\r)+?\{\/\*R_TEXT_END\*\/\}/gm);
+  template.forEach((t, index) => {
+    content = content.replace(
+      matchWords[index],
+      `{/*R_TEXT_START*/}
+      ${template[index].slice(8, -3)}
+    {/*R_TEXT_END*/}`,
+    );
+  });
+  console.log(content);
+  fs.writeFileSync(destComponent, content);
+
+  return res.status(200);
 });
 
 app.listen(port, () => {

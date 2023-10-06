@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import { DragDropContext, Draggable, DropResult, Droppable, OnDragEndResponder } from 'react-beautiful-dnd';
 import { useMainContext } from './MainContext';
 import ContentItem from './ContentItem';
@@ -7,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { XMarkIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 
 export default function Content() {
-  const { routes, currentPage, removeLayout, swapLayout } = useMainContext();
+  const { routes, component, currentPage, removeLayout, swapLayout, getTemplate, saveComponent } = useMainContext();
   const router = useRouter();
   const [generating, setGenerating] = useState<boolean>(false);
 
@@ -36,6 +37,10 @@ export default function Content() {
     swapLayout(sourceIndex, destIndex);
   };
 
+  useEffect(() => {
+    if (component) getTemplate(component);
+  }, [component]);
+
   return (
     <div className="relative bg-gray-100 w-full h-screen overflow-y-auto">
       <DragDropContext onDragEnd={onDragEnd}>
@@ -55,7 +60,12 @@ export default function Content() {
                           ref={provided.innerRef}
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
-                          className="flex items-center gap-2 group"
+                          className={`flex items-center gap-2 group ${
+                            component === layout ? 'border-2 border-red-500' : ''
+                          }`}
+                          onClick={() => {
+                            saveComponent(component === layout ? '' : layout);
+                          }}
                         >
                           {/* <div className="px-6 py-3 border bg-white w-full">{layout}</div> */}
                           <ContentItem name={layout} />

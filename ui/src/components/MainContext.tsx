@@ -7,7 +7,8 @@ interface IMainContext {
     layouts: string[];
   }[];
   currentPage: number;
-  previewFS: boolean;
+  component: string;
+  template: string[];
   addLayout: (name: string) => void;
   removeLayout: (index: number) => void;
   swapLayout: (source: number, dest: number) => void;
@@ -15,13 +16,16 @@ interface IMainContext {
   removeRoute: (index: number) => void;
   changeRoute: (route: number, layouts: string[]) => void;
   changeCurrentPage: (index: number) => void;
-  togglePreview: (val?: boolean) => void;
+  getTemplate: (layout: string) => void;
+  // updateTemplate: (template: string) => void;
+  saveComponent: (name: string) => void;
 }
 
 const MainContext = createContext<IMainContext>({
   routes: [],
   currentPage: 0,
-  previewFS: false,
+  component: '',
+  template: [],
   addLayout: () => {},
   removeLayout: () => {},
   swapLayout: () => {},
@@ -29,7 +33,9 @@ const MainContext = createContext<IMainContext>({
   removeRoute: () => {},
   changeRoute: () => {},
   changeCurrentPage: () => {},
-  togglePreview: () => {},
+  getTemplate: () => {},
+  // updateTemplate: () => {},
+  saveComponent: () => {},
 });
 
 export const useMainContext = () => {
@@ -40,7 +46,8 @@ export const useMainContext = () => {
 export const MainProvider = ({ children }: { children: ReactNode }) => {
   const [routes, setRoutes] = useState<{ page: string; layouts: string[] }[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(0);
-  const [previewFS, setPreviewFS] = useState<boolean>(false);
+  const [template, setTemplate] = useState<string[]>([]);
+  const [component, setComponent] = useState<string>('');
   const addLayout = (layout: string) => {
     setRoutes((prev) => {
       const newRoutes = [...prev];
@@ -107,10 +114,19 @@ export const MainProvider = ({ children }: { children: ReactNode }) => {
     if (index < 0 || index > routes.length) return;
     setCurrentPage(index);
   };
-  const togglePreview = (val?: boolean) => {
-    if (val) setPreviewFS(val);
-    else setPreviewFS((prev) => !prev);
+  const getTemplate = async (layout: string) => {
+    const res = await fetch('http://localhost:3232/template', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ layout }),
+    });
+    const data = await res.json();
+    setTemplate(await data);
   };
+  // const updateTemplate = async (template: string) => {
+  //   setTemplate(template);
+  // };
+  const saveComponent = (name: string) => setComponent(name);
 
   useEffect(() => {
     fetch('http://localhost:3232/pages')
@@ -130,7 +146,8 @@ export const MainProvider = ({ children }: { children: ReactNode }) => {
       value={{
         routes,
         currentPage,
-        previewFS,
+        component,
+        template,
         addLayout,
         removeLayout,
         swapLayout,
@@ -138,7 +155,9 @@ export const MainProvider = ({ children }: { children: ReactNode }) => {
         removeRoute,
         changeRoute,
         changeCurrentPage,
-        togglePreview,
+        getTemplate,
+        // updateTemplate,
+        saveComponent,
       }}
     >
       <main className="flex">{children}</main>;

@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useMainContext } from './MainContext';
 import { ArrowPathIcon } from '@heroicons/react/24/outline';
+import Replicate from 'replicate';
 
 function Header() {
   const { routes, addRoute, removeRoute, changeCurrentPage, currentPage } = useMainContext();
