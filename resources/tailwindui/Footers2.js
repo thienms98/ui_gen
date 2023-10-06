@@ -102,9 +102,11 @@ export default function Example() {
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
               alt="Company name"
             />
+            {/*R_TEXT_START*/}
             <p className="text-sm leading-6 text-gray-600">
               Making the world a better place through constructing elegant hierarchies.
             </p>
+            {/*R_TEXT_END*/}
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">

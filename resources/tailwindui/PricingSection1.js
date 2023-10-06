@@ -12,19 +12,23 @@ export default function Example() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
+        {/*R_TEXT_START*/}
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Simple no-tricks pricing</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas
             in. Explicabo id ut laborum.
           </p>
+          {/*R_TEXT_END*/}
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
+          {/*R_TEXT_START*/}
             <h3 className="text-2xl font-bold tracking-tight text-gray-900">Lifetime membership</h3>
             <p className="mt-6 text-base leading-7 text-gray-600">
               Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis
               repellendus etur quidem assumenda.
             </p>
+            {/*R_TEXT_END*/}
             <div className="mt-10 flex items-center gap-x-4">
               <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">What’s included</h4>
               <div className="h-px flex-auto bg-gray-100" />

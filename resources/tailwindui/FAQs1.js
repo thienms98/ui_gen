@@ -13,6 +13,7 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
+          {/*R_TEXT_START*/}
             <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">Frequently asked questions</h2>
             <p className="mt-4 text-base leading-7 text-gray-600">
               Can’t find the answer you’re looking for? Reach out to our{' '}
@@ -21,6 +22,7 @@ export default function Example() {
               </a>{' '}
               team.
             </p>
+            {/*R_TEXT_END*/}
           </div>
           <div className="mt-10 lg:col-span-7 lg:mt-0">
             <dl className="space-y-10">

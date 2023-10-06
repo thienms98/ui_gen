@@ -45,6 +45,7 @@ export default function Example() {
                 </svg>
                 <img src="https://tailwindui.com/img/logos/workcation-logo-white.svg" alt="" className="h-12 w-auto" />
                 <blockquote className="mt-6 text-xl font-semibold leading-8 text-white">
+                {/*R_TEXT_START*/}
                   <p>
                     “Amet amet eget scelerisque tellus sit neque faucibus non eleifend. Integer eu praesent at a. Ornare
                     arcu gravida natoque erat et cursus tortor.”
@@ -53,11 +54,13 @@ export default function Example() {
                 <figcaption className="mt-6 text-sm leading-6 text-gray-300">
                   <strong className="font-semibold text-white">Judith Rogers,</strong> CEO at Workcation
                 </figcaption>
+                {/*R_TEXT_END*/}
               </figure>
             </div>
           </div>
           <div>
             <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
+            {/*R_TEXT_START*/}
               <p className="text-base font-semibold leading-7 text-indigo-600">Company values</p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 On a mission to empower remote teams
@@ -80,6 +83,7 @@ export default function Example() {
                   hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
                 </p>
               </div>
+              {/*R_TEXT_END*/}
             </div>
             <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-gray-900/10 pt-10 sm:grid-cols-4">
               {stats.map((stat, statIdx) => (

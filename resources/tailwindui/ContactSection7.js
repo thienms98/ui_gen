@@ -40,10 +40,12 @@ export default function Example() {
         <rect width="100%" height="100%" strokeWidth={0} fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" />
       </svg>
       <div className="mx-auto max-w-xl lg:max-w-4xl">
+      {/*R_TEXT_START*/}
         <h2 className="text-4xl font-bold tracking-tight text-gray-900">Let’s talk about your project</h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
           We help companies and individuals build out their brand guidelines.
         </p>
+        {/*R_TEXT_END*/}
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
           <form action="#" method="POST" className="lg:flex-auto">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">

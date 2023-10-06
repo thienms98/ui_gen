@@ -34,10 +34,12 @@ export default function Example() {
             <img className="h-12 w-auto" src="https://tailwindui.com/img/logos/workcation-logo-white.svg" alt="" />
             <figure>
               <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
+            {/*R_TEXT_START*/}
                 <p>
                   “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
                   molestiae. Numquam corrupti in laborum sed rerum et corporis.”
                 </p>
+            {/*R_TEXT_END*/}
               </blockquote>
               <figcaption className="mt-6 text-base text-white">
                 <div className="font-semibold">Judith Black</div>

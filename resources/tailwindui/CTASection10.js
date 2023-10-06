@@ -21,11 +21,13 @@ export default function Example() {
               alt=""
             />
             <div className="w-full flex-auto">
+            {/*R_TEXT_START*/}
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Join our team</h2>
               <p className="mt-6 text-lg leading-8 text-gray-300">
                 Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
                 accusamus quisquam.
               </p>
+              {/*R_TEXT_END*/}
               <ul
                 role="list"
                 className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base leading-7 text-white sm:grid-cols-2"

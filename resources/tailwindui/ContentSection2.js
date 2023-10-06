@@ -17,6 +17,7 @@ export default function Example() {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
+        {/*R_TEXT_START*/}
           <p className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">Deploy faster</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</h1>
           <p className="mt-6 text-xl leading-8 text-gray-700">
@@ -24,6 +25,7 @@ export default function Example() {
             aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend
             egestas fringilla sapien.
           </p>
+          {/*R_TEXT_END*/}
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-10 lg:max-w-none lg:grid-cols-12">
           <div className="relative lg:order-last lg:col-span-5">
@@ -44,6 +46,7 @@ export default function Example() {
               <rect width="100%" height="100%" strokeWidth={0} fill="url(#e87443c8-56e4-4c20-9111-55b82fa704e3)" />
             </svg>
             <figure className="border-l border-indigo-600 pl-8">
+            {/*R_TEXT_START*/}
               <blockquote className="text-xl font-semibold leading-8 tracking-tight text-gray-900">
                 <p>
                   “Vel ultricies morbi odio facilisi ultrices accumsan donec lacus purus. Lectus nibh ullamcorper ac
@@ -62,9 +65,11 @@ export default function Example() {
                   <div className="text-gray-600">@brenna</div>
                 </div>
               </figcaption>
+              {/*R_TEXT_END*/}
             </figure>
           </div>
           <div className="max-w-xl text-base leading-7 text-gray-700 lg:col-span-7">
+          {/*R_TEXT_START*/}
             <p>
               Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
               vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
@@ -107,6 +112,7 @@ export default function Example() {
               tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam
               turpis ipsum eu a sed convallis diam.
             </p>
+            {/*R_TEXT_END*/}
           </div>
         </div>
       </div>

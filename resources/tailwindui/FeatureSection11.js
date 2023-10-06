@@ -25,6 +25,7 @@ export default function Example() {
         <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-20 sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
             <div className="lg:row-start-2 lg:max-w-md">
+            {/*R_TEXT_START*/}
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Boost your productivity.
                 <br />
@@ -34,6 +35,7 @@ export default function Example() {
                 Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.
                 Ac euismod vel sit maecenas.
               </p>
+              {/*R_TEXT_END*/}
             </div>
             <img
               src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"

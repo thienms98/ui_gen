@@ -657,10 +657,10 @@ replace-in-file@^7.0.1:
     glob "^8.1.0"
     yargs "^17.7.2"
 
-replicate@^0.19.0:
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/replicate/-/replicate-0.19.0.tgz#60f8abb984e1465f2dd74d6c8cca1670aa45cb22"
-  integrity sha512-qtmLgbn2zxy1qbrhUv7eNoJL26RTL3y9Nc3Enx4WZBHz3u2xR2BZYdgdcw5lNVBxzuhSnuu41SprP6OgVx144w==
+replicate@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/replicate/-/replicate-0.20.0.tgz#2d62519be263e0d670ff186158a4c3b9db868295"
+  integrity sha512-HSIdj0IHhpegy8s3yDMMYCNLPLZqWzScxnFEyxUQcWgbHn3ycEG5Z8uCwt1Bkp6mTOyEmVv2Ot0WRoXzHFuJ6A==
 
 require-directory@^2.1.1:
   version "2.1.1"

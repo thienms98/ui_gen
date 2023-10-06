@@ -81,6 +81,7 @@ export default function Example() {
       <div className="flow-root bg-gray-900 pb-16 pt-24 sm:pt-32 lg:pb-0">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="relative z-10">
+          {/*R_TEXT_START*/}
             <h2 className="mx-auto max-w-4xl text-center text-5xl font-bold tracking-tight text-white">
               Simple pricing, no commitment
             </h2>
@@ -88,6 +89,7 @@ export default function Example() {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos odit doloribus
               molestiae voluptatum quos odit doloribus.
             </p>
+            {/*R_TEXT_END*/}
             <div className="mt-16 flex justify-center">
               <RadioGroup
                 value={frequency}

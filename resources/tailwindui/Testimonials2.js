@@ -19,10 +19,12 @@ export default function Example() {
               <use href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" x={86} />
             </svg>
             <blockquote className="text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+            {/*R_TEXT_START*/}
               <p>
                 Commodo amet fugiat excepteur sunt qui ea elit cupidatat ullamco consectetur ipsum elit consequat. Elit
                 sunt proident ea nulla ad nulla dolore ad pariatur tempor non. Sint veniam minim et ea.
               </p>
+              {/*R_TEXT_END*/}
             </blockquote>
           </div>
           <div className="col-end-1 w-16 lg:row-span-4 lg:w-72">

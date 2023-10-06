@@ -15,6 +15,7 @@ export default function Example() {
         </div>
         <div className="px-6 lg:contents">
           <div className="mx-auto max-w-2xl pb-24 pt-16 sm:pb-32 sm:pt-20 lg:ml-8 lg:mr-0 lg:w-full lg:max-w-lg lg:flex-none lg:pt-32 xl:w-1/2">
+          {/*R_TEXT_START*/}
             <p className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</h1>
             <p className="mt-6 text-xl leading-8 text-gray-700">
@@ -22,7 +23,9 @@ export default function Example() {
               aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend
               egestas fringilla sapien.
             </p>
+            {/*R_TEXT_END*/}
             <div className="mt-10 max-w-xl text-base leading-7 text-gray-700 lg:max-w-none">
+            {/*R_TEXT_START*/}
               <p>
                 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
                 vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
@@ -65,6 +68,7 @@ export default function Example() {
                 tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam
                 turpis ipsum eu a sed convallis diam.
               </p>
+              {/*R_TEXT_END*/}
             </div>
           </div>
         </div>

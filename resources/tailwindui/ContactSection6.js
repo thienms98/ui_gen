@@ -4,10 +4,12 @@ export default function Example() {
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-2xl sm:text-center">
+      {/*R_TEXT_START*/}
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact sales</h2>
         <p className="mt-2 text-lg leading-8 text-gray-600">
           Aute magna irure deserunt veniam aliqua magna enim voluptate.
         </p>
+        {/*R_TEXT_END*/}
       </div>
       <div className="mx-auto mt-20 max-w-lg space-y-16">
         <div className="flex gap-x-6">

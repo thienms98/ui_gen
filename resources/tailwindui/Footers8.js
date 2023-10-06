@@ -172,10 +172,12 @@ export default function Example() {
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
           <div>
+          {/*R_TEXT_START*/}
             <h3 className="text-sm font-semibold leading-6 text-gray-900">Subscribe to our newsletter</h3>
             <p className="mt-2 text-sm leading-6 text-gray-600">
               The latest news, articles, and resources, sent to your inbox weekly.
             </p>
+            {/*R_TEXT_END*/}
           </div>
           <form className="mt-6 sm:flex sm:max-w-md lg:mt-0">
             <label htmlFor="email-address" className="sr-only">

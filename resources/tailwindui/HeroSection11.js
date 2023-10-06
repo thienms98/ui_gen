@@ -139,6 +139,7 @@ export default function Example() {
             <div className="mx-auto max-w-7xl px-6 pb-32 pt-36 sm:pt-60 lg:px-8 lg:pt-32">
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+                {/*R_TEXT_START*/}
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                     We’re changing the way people connect.
                   </h1>
@@ -147,6 +148,7 @@ export default function Example() {
                     labore commodo nulla aliqua proident mollit ullamco exercitation tempor. Sint aliqua anim nulla sunt
                     mollit id pariatur in voluptate cillum.
                   </p>
+                  {/*R_TEXT_END*/}
                   <div className="mt-10 flex items-center gap-x-6">
                     <a
                       href="#"

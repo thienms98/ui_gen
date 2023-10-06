@@ -62,6 +62,7 @@ export default function Example() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      {/*R_TEXT_START*/}
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">Pricing</h2>
           <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -72,6 +73,7 @@ export default function Example() {
           Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in.
           Explicabo id ut laborum.
         </p>
+        {/*R_TEXT_END*/}
         <div className="mt-16 flex justify-center">
           <RadioGroup
             value={frequency}

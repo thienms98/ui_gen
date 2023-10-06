@@ -40,6 +40,7 @@ export default function Example() {
           />
         </div>
         <div className="mt-16 flex justify-center">
+        {/*R_TEXT_START*/}
           <p className="relative rounded-full bg-gray-800 px-4 py-1.5 text-sm leading-6 text-gray-300">
             <span className="hidden md:inline">Over 2500 companies use our tools to better their business.</span>
             <a href="#" className="font-semibold text-white">
@@ -47,6 +48,7 @@ export default function Example() {
               <span aria-hidden="true">&rarr;</span>
             </a>
           </p>
+          {/*R_TEXT_END*/}
         </div>
       </div>
     </div>
