@@ -11,12 +11,14 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
+          {/*R_TEXT_START*/}
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Trusted by creators worldwide
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Lorem ipsum dolor sit amet consect adipisicing possimus.
             </p>
+            {/*R_TEXT_END*/}
           </div>
           <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (

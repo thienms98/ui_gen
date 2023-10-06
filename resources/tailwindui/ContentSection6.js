@@ -4,6 +4,7 @@ export default function Example() {
   return (
     <div className="bg-white px-6 py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+      {/*R_TEXT_START*/}
         <p className="text-base font-semibold leading-7 text-indigo-600">Introducing</p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">JavaScript for Beginners</h1>
         <p className="mt-6 text-xl leading-8">
@@ -11,7 +12,9 @@ export default function Example() {
           aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend
           egestas fringilla sapien.
         </p>
+        {/*R_TEXT_END*/}
         <div className="mt-10 max-w-2xl">
+        {/*R_TEXT_START*/}
           <p>
             Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
             sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
@@ -77,6 +80,7 @@ export default function Example() {
             Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
             sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
           </p>
+          {/*R_TEXT_END*/}
         </div>
         <figure className="mt-16">
           <img
@@ -90,6 +94,7 @@ export default function Example() {
           </figcaption>
         </figure>
         <div className="mt-16 max-w-2xl">
+        {/*R_TEXT_START*/}
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">Everything you need to get up and running</h2>
           <p className="mt-6">
             Purus morbi dignissim senectus mattis adipiscing. Amet, massa quam varius orci dapibus volutpat cras. In
@@ -101,6 +106,7 @@ export default function Example() {
             Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
             sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
           </p>
+          {/*R_TEXT_END*/}
         </div>
       </div>
     </div>

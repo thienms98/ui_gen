@@ -137,6 +137,7 @@ export default function Example() {
                 </a>
               </div>
             </div>
+            {/*R_TEXT_START*/}
             <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               A better way to ship your projects
             </h1>
@@ -144,6 +145,7 @@ export default function Example() {
               Esse id magna consectetur fugiat non dolor in ad laboris magna laborum ea consequat. Nisi irure aliquip
               nisi adipisicing veniam voluptate id. In veniam incididunt ex veniam adipisicing sit.
             </p>
+            {/*R_TEXT_END*/}
             <div className="mt-10 flex items-center gap-x-6">
               <a
                 href="#"

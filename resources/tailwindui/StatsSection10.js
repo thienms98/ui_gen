@@ -9,6 +9,7 @@ export default function Example() {
     <div className="bg-white py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+        {/*R_TEXT_START*/}
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our mission</h2>
           <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
             <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
@@ -24,6 +25,7 @@ export default function Example() {
                 semper sed amet vitae sed turpis id.
               </p>
             </div>
+            {/*R_TEXT_END*/}
             <div className="lg:flex lg:flex-auto lg:justify-center">
               <dl className="w-64 space-y-8 xl:w-80">
                 {stats.map((stat) => (

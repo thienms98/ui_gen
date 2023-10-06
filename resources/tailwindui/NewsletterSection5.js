@@ -17,8 +17,10 @@ export default function Example() {
     <div className="bg-white py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        {/*R_TEXT_START*/}
           <h2 className="inline sm:block">Want product news and updates?</h2>{' '}
           <p className="inline sm:block">Sign up for our newsletter.</p>
+          {/*R_TEXT_END*/}
         </div>
         <form className="mt-10 max-w-md">
           <div className="flex gap-x-4">

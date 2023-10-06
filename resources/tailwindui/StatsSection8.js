@@ -3,6 +3,7 @@ export default function Example() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
+        {/*R_TEXT_START*/}
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             We approach the workplace as something that adds to our lives and adds value to world.
           </h2>
@@ -10,8 +11,10 @@ export default function Example() {
             Diam nunc lacus lacus aliquam turpis enim. Eget hac velit est euismod lacus. Est non placerat nam arcu. Cras
             purus nibh cursus sit eu in id. Integer vel nibh.
           </p>
+          {/*R_TEXT_END*/}
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
+        {/*R_TEXT_START*/}
           <div className="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-50 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start">
             <p className="flex-none text-3xl font-bold tracking-tight text-gray-900">250k</p>
             <div className="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
@@ -42,6 +45,7 @@ export default function Example() {
             </div>
           </div>
         </div>
+        {/*R_TEXT_END*/}
       </div>
     </div>
   )

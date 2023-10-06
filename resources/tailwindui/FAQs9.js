@@ -12,6 +12,7 @@ export default function Example() {
   return (
     <div className="bg-gray-900">
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
+      {/*R_TEXT_START*/}
         <h2 className="text-2xl font-bold leading-10 tracking-tight text-white">Frequently asked questions</h2>
         <p className="mt-6 max-w-2xl text-base leading-7 text-gray-300">
           Have a different question and can’t find the answer you’re looking for? Reach out to our support team by{' '}
@@ -20,6 +21,7 @@ export default function Example() {
           </a>{' '}
           and we’ll get back to you as soon as we can.
         </p>
+        {/*R_TEXT_END*/}
         <div className="mt-20">
           <dl className="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:gap-x-10">
             {faqs.map((faq) => (

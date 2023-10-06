@@ -13,11 +13,13 @@ export default function Example() {
           <StarIcon className="h-5 w-5 flex-none" aria-hidden="true" />
         </div>
         <blockquote className="mt-10 text-xl font-semibold leading-8 tracking-tight text-gray-900 sm:text-2xl sm:leading-9">
+        {/*R_TEXT_START*/}
           <p>
             “Qui dolor enim consectetur do et non ex amet culpa sint in ea non dolore. Enim minim magna anim id minim eu
             cillum sunt dolore aliquip. Amet elit laborum culpa irure incididunt adipisicing culpa amet officia
             exercitation. Eu non aute velit id velit Lorem elit anim pariatur.”
           </p>
+          {/*R_TEXT_END*/}
         </blockquote>
         <figcaption className="mt-10 flex items-center gap-x-6">
           <img

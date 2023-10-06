@@ -7,11 +7,13 @@ export default function Example() {
             <img className="h-12 self-start" src="https://tailwindui.com/img/logos/tuple-logo-white.svg" alt="" />
             <figure className="mt-10 flex flex-auto flex-col justify-between">
               <blockquote className="text-lg leading-8 text-white">
+              {/*R_TEXT_START*/}
                 <p>
                   “Amet amet eget scelerisque tellus sit neque faucibus non eleifend. Integer eu praesent at a. Ornare
                   arcu gravida natoque erat et cursus tortor consequat at. Vulputate gravida sociis enim nullam
                   ultricies habitant malesuada lorem ac. Tincidunt urna dui pellentesque sagittis.”
                 </p>
+                {/*R_TEXT_END*/}
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
                 <img
@@ -30,11 +32,13 @@ export default function Example() {
             <img className="h-12 self-start" src="https://tailwindui.com/img/logos/reform-logo-white.svg" alt="" />
             <figure className="mt-10 flex flex-auto flex-col justify-between">
               <blockquote className="text-lg leading-8 text-white">
+              {/*R_TEXT_START*/}
                 <p>
                   “Excepteur veniam labore ullamco eiusmod. Pariatur consequat proident duis dolore nulla veniam
                   reprehenderit nisi officia voluptate incididunt exercitation exercitation elit. Nostrud veniam sint
                   dolor nisi ullamco.”
                 </p>
+                {/*R_TEXT_END*/}
               </blockquote>
               <figcaption className="mt-10 flex items-center gap-x-6">
                 <img

@@ -30,6 +30,7 @@ export default function Example() {
     <div className="isolate overflow-hidden bg-gray-900">
       <div className="mx-auto max-w-7xl px-6 pb-96 pt-24 text-center sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl">
+        {/*R_TEXT_START*/}
           <h2 className="text-base font-semibold leading-7 text-indigo-400">Pricing</h2>
           <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
             The right price for you, <br className="hidden sm:inline lg:hidden" />
@@ -41,6 +42,7 @@ export default function Example() {
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos odit doloribus
             molestiae voluptatum.
           </p>
+          {/*R_TEXT_END*/}
           <svg
             viewBox="0 0 1208 1024"
             className="absolute -top-10 left-1/2 -z-10 h-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-12 xl:top-0"

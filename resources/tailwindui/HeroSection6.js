@@ -129,6 +129,7 @@ export default function Example() {
         <div className="py-24 sm:py-32 lg:pb-40">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
+            {/*R_TEXT_START*/}
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                 Data to enrich your online business
               </h1>
@@ -137,6 +138,7 @@ export default function Example() {
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                 fugiat aliqua.
               </p>
+              {/*R_TEXT_END*/}
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="#"

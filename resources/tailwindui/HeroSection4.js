@@ -24,6 +24,7 @@ export default function Example() {
                     </span>
                   </a>
                 </div>
+                {/*R_TEXT_START*/}
                 <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
                   Supercharge your web applications
                 </h1>
@@ -31,6 +32,7 @@ export default function Example() {
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
                   amet fugiat veniam occaecat fugiat aliqua.
                 </p>
+                {/*R_TEXT_END*/}
                 <div className="mt-10 flex items-center gap-x-6">
                   <a
                     href="#"

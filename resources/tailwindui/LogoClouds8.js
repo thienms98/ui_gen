@@ -4,11 +4,13 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
           <div className="mx-auto w-full max-w-xl lg:mx-0">
+          {/*R_TEXT_START*/}
             <h2 className="text-3xl font-bold tracking-tight text-white">Trusted by the most innovative teams</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a
               scelerisque amet ullamcorper eu enim et fermentum, augue.
             </p>
+            {/*R_TEXT_END*/}
             <div className="mt-8 flex items-center gap-x-6">
               <a
                 href="#"

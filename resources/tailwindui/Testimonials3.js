@@ -27,11 +27,13 @@ export default function Example() {
                 <use href="#b56e9dab-6ccb-4d32-ad02-6b4bb5d9bbeb" x={86} />
               </svg>
               <blockquote className="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">
+              {/*R_TEXT_START*/}
                 <p>
                   Gravida quam mi erat tortor neque molestie. Auctor aliquet at porttitor a enim nunc suscipit tincidunt
                   nunc. Et non lorem tortor posuere. Nunc eu scelerisque interdum eget tellus non nibh scelerisque
                   bibendum.
                 </p>
+                {/*R_TEXT_END*/}
               </blockquote>
               <figcaption className="mt-8 text-base">
                 <div className="font-semibold text-white">Judith Black</div>
