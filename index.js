@@ -161,7 +161,7 @@ app.post('/template', (req, res) => {
 
 app.post('/generateText', async (req, res) => {
   const { prompt, sysPrompt } = req.body;
-  const REPLICATE_API_TOKEN = 'r8_MWeUXsSJySX9RUbP3GyFOMDsyEkPSTM3SXxv6';
+  const REPLICATE_API_TOKEN = process.env.REPLICATE_API_TOKEN;
   const replicate = new Replicate({
     auth: REPLICATE_API_TOKEN,
   });
